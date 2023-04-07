@@ -49,7 +49,7 @@ File Name | Description of File
 
 
 ### Step 4: 
-* Since we did transformation according to the project requirement, the data in the new container in ADLS storage can be used for Machine Learning and Data Science purpose. Filly one more time we are going to use ADF to load the data into the SQL database, so that Data Analysts can query  data directly from the database by using PowerBi/Tableau or any other data visualization tool for analysis purpose.
+* Since we did transformation according to the project requirement, the data in the new container in ADLS storage can be used for Machine Learning and Data Science purpose. Finally, we are going to use ADF to load the data into the SQL database, so that Data Analysts can query  data directly from the database by using PowerBi/Tableau or any other data visualization tool for analysis purpose.
 
 ![](./Slides_and_Screenshots(Media)/PowerBi_ss.png)
 
@@ -63,7 +63,7 @@ File Name | Description of File
 * I have also used **Schedule Triggers** at the time of Ingesting the data into the ADLS storage from different storage and also used **Event Triggers** which triggers when the data reaches into the ADLS storage.
 * I basically categorized the data into 3 types. i.e ***Brozne --> Silver --> Gold*** which basically means when the data moves from bronze to gold, the quality and the value of the data improves.
 
-* This project has been taken inspiration from one of the course in Udemy: https://www.udemy.com/course/learn-azure-data-factory-from-scratch/
+* This project has taken inspiration from the following course on Udemy: https://www.udemy.com/course/learn-azure-data-factory-from-scratch/
 
 
 
