@@ -27,7 +27,7 @@ File Name | Description of File
 
 
 ### Step 2: 
-* The following 3 datasets: cases_and_deaths, hospial_admissions, testing_data that are successfully uploaded in the GitHub repository under Covid19-Europe-Project
+* The following 3 datasets: cases_and_deaths, hospital_admissions, testing_data that are successfully uploaded in the GitHub repository under Covid19-Europe-Project
 /main-csv-data-files. Now I have to connect these files to the ADF through ***https:*** Linked Service and provided a base url name to it. Since I wanted to ingest all these 3 datasets into **ADLS gen2** at a time, I created a json file with 3 files and created a parameterized dataset with the help of Lookup acivity and ForEach activity I was able to successfully ingest the data into the **ADLS gen2**.
 
 
