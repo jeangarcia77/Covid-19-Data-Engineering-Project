@@ -1,5 +1,5 @@
 # Covid19 Project based on Europe Data End2End
-This project mainly focus on the Europe Covid19 Data. 
+This project mainly focuses on European Covid19 Data. 
 The data has been taken from EuroStat and European Centre for Disease Prevention and Control (ECDC) wesbsites.
 
 * The main objective of this project is to use raw data to perform **ETL** (Extract, Transform and Load) using  **Azure Data Factory**.
@@ -27,15 +27,15 @@ File Name | Description of File
 
 
 ### Step 2: 
-* Now I have rest 3 datasets i.e cases_and_deaths, hospial_admissions, testing_data that are successfully uploaded in the GitHub repository under Covid19-Europe-Project
-/main-csv-data-files. Now I have to connect these files to the ADF through ***https:*** Linked Service and gave my base url name to it. Since I wanted to create ingest all these 3 datasets into **ADLS gen2** at a time, I created a json file with 3 files and created parameterized datset and with the help of Lookup acivity and ForEach activity I was able to successfully ingest the data into the **ADLS gen2**.
+* The following 3 datasets: cases_and_deaths, hospial_admissions, testing_data that are successfully uploaded in the GitHub repository under Covid19-Europe-Project
+/main-csv-data-files. Now I have to connect these files to the ADF through ***https:*** Linked Service and provided a base url name to it. Since I wanted to ingest all these 3 datasets into **ADLS gen2** at a time, I created a json file with 3 files and created a parameterized dataset with the help of Lookup acivity and ForEach activity I was able to successfully ingest the data into the **ADLS gen2**.
 
 
 ![](./Slides_and_Screenshots(Media)/github_files_ingestion.png)
 
 
 ### Step 3:
-* Once right after the required data ingested into the ADLS gen2 storage, I have created the dataFlows for all of the four files and creatd the required datasets for those. Now the DataFow will help us to create the transformations according to the project requirement. Once after the dataFlows build, I created the the pipelines for all of those 4 datasets which redirects to the another Container in the same ADLS storage.
+* Right after the required data was ingested into the ADLS gen2 storage, I created the dataFlows for all of the four files and created the required datasets. Now the DataFow will help us to create the transformations according to the project requirement. Once the dataFlows have been built, I created the the pipelines for the 4 datasets which redirects to another Container in the same ADLS storage.
 
 *These the pictures of the dataFlows that are used for the transformations*
 
@@ -49,7 +49,7 @@ File Name | Description of File
 
 
 ### Step 4: 
-* Since we did transformation according to the project requirement, the data in the new container in ADLS storage can be used for Machine Learning and Data Science purpose. Finally, we are going to use ADF to load the data into the SQL database, so that Data Analysts can query  data directly from the database by using PowerBi/Tableau or any other data visualization tool for analysis purpose.
+* Since we did our transformation according to the project requirement, the data in the new container within the ADLS storage can be used for Machine Learning and Data Science purposes. Finally, we are going to use ADF to load the data into the SQL database, so that Data Analysts can query data directly from the database by using PowerBi/Tableau or any other data visualization tool for analysis purposes.
 
 ![](./Slides_and_Screenshots(Media)/PowerBi_ss.png)
 
@@ -60,7 +60,7 @@ File Name | Description of File
 
 ![](./Slides_and_Screenshots(Media)/tests_map.png)
 
-* I have also used **Schedule Triggers** at the time of Ingesting the data into the ADLS storage from different storage and also used **Event Triggers** which triggers when the data reaches into the ADLS storage.
+* I have also used **Schedule Triggers** at the time of Ingesting the data into the ADLS storage from a different storage and also used **Event Triggers** which triggers when the data reaches into the ADLS storage.
 * I basically categorized the data into 3 types. i.e ***Brozne --> Silver --> Gold*** which basically means when the data moves from bronze to gold, the quality and the value of the data improves.
 
 * This project has taken inspiration from the following course on Udemy: https://www.udemy.com/course/learn-azure-data-factory-from-scratch/
